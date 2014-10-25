@@ -12,13 +12,26 @@ if(isset($_POST['envoi']) && $_POST['envoi'] == 1 && $_SESSION['connecte'])
     exit();
 }
 
+$type_lien = 0;
+$lien = NULL;
 if(isset($_GET['lien']))
-    $smarty->assign('lien', urldecode($_GET['lien']));
+{
+    $lien = urldecode($_GET['lien']);
+    $smarty->assign('lien', $lien);
+    $type_lien = type_lien($lien);
+}
 else
     $smarty->assign('lien', '');
 
 if(isset($_GET['titre']))
-    $smarty->assign('titre', urldecode($_GET['titre']));
+{
+    $titre = urldecode($_GET['titre']);
+    if($type_lien != 0 && $lien != NULL)
+    {
+        $titre = traiter_titre($titre, $type_lien, $lien);
+    }
+    $smarty->assign('titre', $titre);
+}
 else
     $smarty->assign('titre', '');
     

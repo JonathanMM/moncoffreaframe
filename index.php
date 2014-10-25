@@ -13,5 +13,8 @@ while($donnees = $requete->fetch())
 }
 $smarty->assign('liste_liens', $liste_liens);
 
-$smarty->display("tpl/index.tpl");
+if($_SESSION['connecte'])
+    $smarty->display("tpl/index.tpl");
+else
+    $smarty->display("tpl/accueil.tpl");
 ?>

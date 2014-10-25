@@ -111,11 +111,11 @@ function nom_type($id)
 
 function type_lien($lien)
 {
-    if(!(strstr($lien, 'framapad.org') === false))
+    if(!(strstr($lien, 'framapad.org') === false)) //Nolife Wiki Ajout des liens noco | Framapad Lite
         return 1;
-    elseif(!(strstr($lien, 'framadate.org') === false))
+    elseif(!(strstr($lien, 'framadate.org') === false)) //Choose a new name for poche - Framadate
         return 2;
-    elseif(!(strstr($lien, 'framacalc.org') === false))
+    elseif(!(strstr($lien, 'framacalc.org') === false)) //À prendre dans l'URL…
         return 3;
     elseif(!(strstr($lien, 'framalab.org/zerobin') === false))
         return 4;
@@ -125,5 +125,38 @@ function type_lien($lien)
         return 6;
     else
         return 0;
+}
+
+function traiter_titre($titre, $type_lien, $lien)
+{
+    switch($type_lien)
+    {
+        case 1:
+            $ex = explode(' | ', $titre);
+            if(count($ex) >= 2)
+                return $ex[0];
+            else //On le prend dans l'url
+                return fin_url($lien);
+            break;
+        case 2:
+            $ex = explode(' - ', $titre);
+            if(count($ex) >= 2)
+                return $ex[0];
+            else //On le prend dans l'url
+                return fin_url($lien);
+            break;
+        case 3:
+            return fin_url($lien);
+            break;
+        default:
+            return $titre;
+            break;
+    }
+}
+
+function fin_url($lien)
+{
+    $ex = explode('/', $lien);
+    return $ex[count($ex) - 1];
 }
 ?>
