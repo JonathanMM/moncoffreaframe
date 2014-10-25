@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="tpl/css/style.min.css" />
         <script type="text/javascript" src="tpl/js/persona.js"></script>
         <script type="text/javascript" src="tpl/js/script.js"></script>
-        <title>Framatout (non officiel)</title>
+        <title>Mon coffre à frame</title>
         <script type="application/javascript">
             {nocache}var utilisateur = "{$session_courriel}";{/nocache}
             navigator.id.watch( {
