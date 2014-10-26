@@ -7,7 +7,7 @@
                 {if $racine}
                     <div class="input-group">
                         <form method="post" role="form" action="ajout_dossier.php">
-                              <input type="text" class="form-control" name="nom" placeholder="Nouveau dossier" />
+                              <input type="text" class="form-control" name="nom" placeholder="Nouveau dossier" required />
                               <input type="hidden" name="envoi" value="1" />
                               <span class="input-group-btn">
                                 <button class="btn btn-default" type="submit">
@@ -26,14 +26,18 @@
                 </a>
             </div>
             <div class="col-md-8">
-                <!--<div class="input-group">
-                  <input type="text" class="form-control" placeholder="Rechercher" />
-                  <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">
-                      <span class="glyphicon glyphicon-search"></span>
-                    </button>
-                  </span>
-                </div>-->
+                <div class="input-group">
+                    <form method="post" role="form" action="rechercher.php">
+                      <input type="text" class="form-control" name="label" placeholder="Rechercher{if !$racine} dans ce dossier{/if}" required />
+                      <input type="hidden" name="envoi" value="1" />
+                      {if !$racine}<input type="hidden" name="dossier" value="{$id_dossier}" />{/if}
+                      <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                          <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                      </span>
+                    </form>
+                </div>
             </div>
         </div>
         <div class="table-responsive">
