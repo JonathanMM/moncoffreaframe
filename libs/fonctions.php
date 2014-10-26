@@ -103,6 +103,9 @@ function nom_type($id)
         case 6:
             return "FramaTube";
             break;
+        case -1:
+            return "Dossier";
+            break;
         case 0:
         default:
             return "Autre";
