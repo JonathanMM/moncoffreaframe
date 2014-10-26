@@ -3,7 +3,7 @@
 <div class="container">
     <div class="starter-template">
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-3">
                 {if $racine}
                     <div class="input-group">
                         <form method="post" role="form" action="ajout_dossier.php">
@@ -18,14 +18,14 @@
                     </div>
                 {/if}
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <a href="ajout.php{if !$racine}?dossier={$id_dossier}{/if}">
                     <button type="button" class="btn btn-default">
                       <span class="glyphicon glyphicon-plus"></span> Ajouter un fichier
                     </button>
                 </a>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-6">
                 <div class="input-group">
                     <form method="post" role="form" action="rechercher.php">
                       <input type="text" class="form-control" name="label" placeholder="Rechercher{if !$racine} dans ce dossier{/if}" required />
