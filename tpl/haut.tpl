@@ -5,6 +5,7 @@
         <link rel="stylesheet" type="text/css" href="tpl/css/bootstrap-theme.min.css" />
         <link rel="stylesheet" type="text/css" href="tpl/css/style.min.css" />
         <script type="text/javascript" src="tpl/js/persona.js"></script>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
         <script type="text/javascript" src="tpl/js/script.js"></script>
         <title>Mon coffre à frame</title>
         <script type="application/javascript">
