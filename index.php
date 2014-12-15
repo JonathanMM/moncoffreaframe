@@ -21,6 +21,7 @@ while($donnees = $requete->fetch())
                             'titre' => $donnees['titre'],
                             'lien' => $donnees['lien'],
                             'type' => nom_type($donnees['type']),
+						    'telecharger' => lien_type($donnees['lien'], $donnees['type']),
                             'dossier' => ($donnees['type'] == -1),
                             'date_ajout' => formater_dateheure_fr($donnees['date_ajout']));
 }

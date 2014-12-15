@@ -1,6 +1,3 @@
-moncoffreaframe
-===============
-
 /*************************
  *  Mon coffre à frame   *
  *************************/
@@ -17,6 +14,6 @@ moncoffreaframe
  
  1. Executer requete.sql dans votre base MySQL
  
- 2. Complèter configuration.php
+ 2. Compléter configuration.php
  
  3. Enjoy :)

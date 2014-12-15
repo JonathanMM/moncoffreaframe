@@ -16,8 +16,8 @@ function cb_deco()
     /*document.getElementById('nav_connexion').style.display = 'block';
     document.getElementById('nav_deconnexion').style.display = 'none';*/
     //alert('deconnecté !');
-    if(utilisateur != '')
-        window.location.reload();
+    /*if(utilisateur != '')
+        window.location.reload();*/
 }
 
 function se_connecter(assertion)
@@ -37,8 +37,8 @@ function cb_co()
     /*document.getElementById('nav_connexion').style.display = 'none';
     document.getElementById('nav_deconnexion').style.display = 'block';*/
     //alert('connecté !');
-    if(utilisateur == '')
-        window.location.reload();
+    /*if(utilisateur == '')
+        window.location.reload();*/
 }
 
 function se_deconnecter()

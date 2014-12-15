@@ -1,4 +1,7 @@
 <?php
+include('import_framapad.php');
+include('import_framacalc.php');
+
 function formater_jjmmaaaahhmm($date_debut)
 {
 	$explode_dd = explode(' ', $date_debut);
@@ -112,6 +115,23 @@ function nom_type($id)
     }
 }
 
+function lien_type($lien, $id)
+{
+    switch($id)
+    {
+        case 1:
+            return $lien.'/export/odt';
+            break;
+        case 3:
+			$explode = explode('/', $lien);
+			$nv_lien = implode('/', array_slice($explode, 0, -1)).'/_/'.$explode[count($explode) - 1];
+            return $nv_lien.'/html';
+            break;
+        default:
+            return false;
+    }
+}
+
 function type_lien($lien)
 {
     if(!(strstr($lien, 'framapad.org') === false)) //Nolife Wiki Ajout des liens noco | Framapad Lite
@@ -161,5 +181,14 @@ function fin_url($lien)
 {
     $ex = explode('/', $lien);
     return $ex[count($ex) - 1];
+}
+
+function genererCodeAleatoire($n)
+{
+	$list = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	$code = '';
+	for($i = 0; $i < $n; $i++)
+		$code .= $list[rand(0, strlen($list) - 1)];
+	return $code;
 }
 ?>
