@@ -10,7 +10,10 @@ if(isset($_POST['envoi']) && $_POST['envoi'] == 1 && $_SESSION['connecte'])
     if(strlen($titre) > 0 && strlen($lien) > 0)
         $bdd->query('INSERT INTO framatout (titre, type, date_ajout, lien, membre, dossier)
                      VALUES ("'.$titre.'", "'.type_lien($lien).'", NOW(), "'.$lien.'", "'.$_SESSION['courriel'].'", '.$dossier.')');
-    header('location: index.php');
+	if($dossier != 0)
+		header('location: index.php?dossier='.$dossier);
+	else
+		header('location: index.php');
     exit();
 }
 

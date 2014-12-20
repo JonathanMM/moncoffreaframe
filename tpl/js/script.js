@@ -3,7 +3,7 @@ function simpleXhrSentinel(xhr, callback) {
         if (xhr.readyState == 4) {
             if (xhr.status == 200)
             {
-                callback();
+                callback(xhr.responseText);
             }
             else
                 alert("XMLHttpRequest error: " + xhr.status);

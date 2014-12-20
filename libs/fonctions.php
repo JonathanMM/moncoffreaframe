@@ -120,7 +120,7 @@ function lien_type($lien, $id)
     switch($id)
     {
         case 1:
-            return $lien.'/export/odt';
+            return $lien.'/export/html';
             break;
         case 3:
 			$explode = explode('/', $lien);

@@ -29,7 +29,7 @@
 			</div> 
 			{if !$racine}
 			<div class="col-md-3" style="text-align: left;">
-				<a href="/">
+				<a href=".">
 					<button type="button" class="btn btn-default">
 						<span class="glyphicon glyphicon-eject"></span> Retour à l'accueil
 					</button>
